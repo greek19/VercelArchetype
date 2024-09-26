@@ -1,13 +1,9 @@
-// import { db, products } from 'lib/db';
+import { db, products } from 'lib/db';
 
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
-  return Response.json({
-    message: 'Uncomment to seed data after DB is set up.'
-  });
-
-  await db.insert(products).values([
+  return await db.insert(products).values([
     {
       id: 1,
       imageUrl:
